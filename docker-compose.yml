@@ -5,9 +5,9 @@ services:
       dockerfile: Dockerfile
     container_name: personal-cloud-web
     ports:
-      - "8080:3000"
+      - "8080:8080"
     environment:
-      - PORT=3000
+      - PORT=8080
       - STORAGE_ROOT=/data/storage
       - STORAGE_CAPACITY_BYTES=21474836480
       - MAX_UPLOAD_SIZE_MB=200
