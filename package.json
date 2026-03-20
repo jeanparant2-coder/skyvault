@@ -1,0 +1,15 @@
+{
+  "name": "personal-cloud-web",
+  "version": "1.0.0",
+  "description": "Cloud personnel web avec stockage persistant.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}

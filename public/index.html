@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Cloud</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-logo">PC</div>
+          <div>
+            <p class="brand-title">Personal Cloud</p>
+            <p class="brand-subtitle">Stockage prive</p>
+          </div>
+        </div>
+
+        <nav class="side-nav">
+          <button class="nav-item nav-item--active" type="button">Mes fichiers</button>
+          <button class="nav-item" type="button">Recents</button>
+          <button class="nav-item" type="button">Partages</button>
+          <button class="nav-item" type="button">Corbeille</button>
+        </nav>
+
+        <section class="storage-card">
+          <p class="storage-title">Utilisation</p>
+          <p id="storageLabel" class="storage-value">0 Go / 0 Go</p>
+          <div class="storage-bar">
+            <div id="storageFill" class="storage-fill"></div>
+          </div>
+        </section>
+      </aside>
+
+      <main class="content">
+        <header class="header">
+          <div>
+            <h1 class="page-title">Mon espace cloud</h1>
+            <div id="breadcrumb" class="breadcrumb"></div>
+          </div>
+
+          <div class="header-actions">
+            <label class="search-wrapper" for="searchInput">
+              <span>Recherche</span>
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Nom de fichier ou dossier..."
+                autocomplete="off"
+              />
+            </label>
+            <button id="viewToggleButton" class="ghost-button" type="button">
+              Vue liste
+            </button>
+          </div>
+        </header>
+
+        <section class="toolbar">
+          <button id="uploadButton" class="primary-button" type="button">
+            Uploader
+          </button>
+          <button id="newFolderButton" class="secondary-button" type="button">
+            Nouveau dossier
+          </button>
+          <button id="renameButton" class="ghost-button" type="button" disabled>
+            Renommer
+          </button>
+          <button id="deleteButton" class="danger-button" type="button" disabled>
+            Supprimer
+          </button>
+          <input id="fileInput" type="file" multiple hidden />
+        </section>
+
+        <section id="emptyState" class="empty-state" hidden>
+          <p>Aucun element a afficher.</p>
+        </section>
+
+        <section id="itemsContainer" class="items-grid" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <div id="modalOverlay" class="modal-overlay" hidden>
+      <div class="modal">
+        <h2 id="modalTitle">Titre</h2>
+        <p id="modalDescription"></p>
+        <input id="modalInput" type="text" />
+        <div class="modal-actions">
+          <button id="modalCancel" class="ghost-button" type="button">Annuler</button>
+          <button id="modalConfirm" class="primary-button" type="button">
+            Confirmer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" hidden></div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
