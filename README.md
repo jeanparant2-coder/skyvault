@@ -38,7 +38,7 @@ Les fichiers sont conserves dans le volume nomme `cloud_storage`.
 
 ## Variables utiles
 
-- `PORT` (defaut `3000`)
+- `PORT` (defaut `8080`)
 - `STORAGE_ROOT` (defaut `/data/storage` dans le conteneur)
 - `STORAGE_CAPACITY_BYTES` (defaut `21474836480`, soit 20 Go)
 - `MAX_UPLOAD_SIZE_MB` (defaut `200`)
