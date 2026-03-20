@@ -9,9 +9,9 @@ COPY . .
 
 RUN mkdir -p /data/storage
 
-ENV PORT=3000
+ENV PORT=8080
 ENV STORAGE_ROOT=/data/storage
 
-EXPOSE 3000
+EXPOSE 8080
 
 CMD ["npm", "start"]
