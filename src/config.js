@@ -1,17 +1,20 @@
 const path = require("path");
 
-const PORT = Number(process.env.PORT || 3000);
-const STORAGE_ROOT = path.resolve(
-  process.env.STORAGE_ROOT || path.join(process.cwd(), "data", "storage")
-);
-const MAX_UPLOAD_SIZE_MB = Number(process.env.MAX_UPLOAD_SIZE_MB || 200);
-const STORAGE_CAPACITY_BYTES = Number(
-  process.env.STORAGE_CAPACITY_BYTES || 20 * 1024 * 1024 * 1024
-);
+/**
+ * PORT :
+ * - process.env.PORT = variable d’environnement (ex: Docker)
+ * - 8080 = port par défaut si rien n’est défini
+ */
+const PORT = Number(process.env.PORT) || 8080;
+
+/**
+ * STORAGE_ROOT :
+ * - Dossier où sont stockés les fichiers upload
+ * - Ici : /data/storage à la racine du projet
+ */
+const STORAGE_ROOT = path.join(__dirname, "..", "data", "storage");
 
 module.exports = {
   PORT,
   STORAGE_ROOT,
-  MAX_UPLOAD_SIZE_MB,
-  STORAGE_CAPACITY_BYTES,
 };
